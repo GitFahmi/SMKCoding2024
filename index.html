@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, initial-scale=1.25, maximum-scale=1.25, minimum-scale=1.25, user-scalable=no">
+    <title>Pilus Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="shape"></div>
+        <div class="navbar">
+            <a href="" class="logo"><img src="assets/logo.png" alt="" class="logo"></a>
+            <nav>
+                <ul role="list" class="navbar-items">
+                    <li><a href="">Beranda</a></li>
+                    <li><a href="">Menu</a></li>
+                    <li><a href="">Order</a></li>
+                    <li><a href="">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <main>
+
+            <div class="main-txt">
+                <h2 class="product-header">New Product Released ! <br>
+                    It's <span>Pilus Garuda</span></h2>
+                <p class="product-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam ea, totam ullam distinctio nulla tempore eum quaerat commodi itaque consequuntur
+                Porro quibusdam, voluptates ea aperiam molestias incidunt dignissimos. Expedita consectetur doloribus ab atque, repellat alias facilis quas laborum rerum obcaecati distinctio ex nulla delectus.</p>
+                <button class="order-here">Order Here !</button>
+            </div>
+
+            <div class="main-img">
+                <img src="assets/rumput.png" alt="pilus" class="pilus">
+                <div class="socials">
+                    <ul>
+                        <li><i class="fa-brands fa-whatsapp"></i></li>
+                        <li><i class="fa-brands fa-instagram"></i></li>
+                        <li><i class="fa-brands fa-github"></i></li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </main>
+
+        <div class="thumb">
+            <ul class="product-gallery">
+                <li><img src="assets/rumput.png" alt="" onclick="imgSlide('assets/rumput.png'); changeColor('rgb(20, 119, 20)')"></li>
+                <li><img src="assets/pedas.png" alt="" onclick="imgSlide('assets/pedas.png'); changeColor('#932929')"></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script src="global.js"></script>
+
+    <script>
+        function applyFixedScaling() {
+            const deviceScale = window.devicePixelRatio; // Dapatkan skala perangkat (Windows scaling)
+            const targetScale = 1.25 / deviceScale; // Koreksi scaling ke 125%
+            
+            // Terapkan scaling dengan transform untuk memastikan skala tetap 125%
+            document.body.style.transform = `scale(${targetScale})`;
+            document.body.style.width = `${100 / targetScale}%`; // Sesuaikan lebar elemen agar tetap proporsional
+        }
+
+        // Panggil saat halaman dimuat dan saat ukuran jendela diubah
+        window.onload = applyFixedScaling;
+        window.onresize = applyFixedScaling;
+    </script>
+
+</body>
+</html>
